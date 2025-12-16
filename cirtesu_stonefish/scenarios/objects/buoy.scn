@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<scenario>
+  <environment>
+    <gravity x="0.0" y="0.0" z="9.81"/>
+    <water density="1025.0">
+      <level value="0.0"/>
+    </water>
+  </environment>
+
+  <looks>
+    <look name="Red" rgb="1.0 0.0 0.0" roughness="0.3" metalness="0.0"/>
+  </looks>
+
+  <materials>
+    <material name="Neutral" density="1000.0" restitution="0.5"/>
+  </materials>
+
+  <!-- Using parametric solid as shown in documentation -->
+  <dynamic name="red_buoy" type="sphere" physics="submerged" buoyant="true">
+    <dimensions radius="0.15"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <material name="Neutral"/>
+    <look name="Red"/>
+    <mass value="1.0"/>
+    <world_transform xyz="2.0 2.0 0.4" rpy="0 0 0"/>
+  </dynamic>
+
+  <ros_base_link_transforms publish="false"/>
+</scenario>
